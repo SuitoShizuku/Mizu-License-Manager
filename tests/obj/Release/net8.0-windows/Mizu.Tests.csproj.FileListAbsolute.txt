@@ -1,0 +1,15 @@
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\bin\Release\net8.0-windows\Mizu.Tests.exe
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\bin\Release\net8.0-windows\Mizu.Tests.deps.json
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\bin\Release\net8.0-windows\Mizu.Tests.runtimeconfig.json
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\bin\Release\net8.0-windows\Mizu.Tests.dll
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\bin\Release\net8.0-windows\Mizu.Tests.pdb
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.AssemblyInfoInputs.cache
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.AssemblyInfo.cs
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.csproj.CoreCompileInputs.cache
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.dll
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\refint\Mizu.Tests.dll
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.pdb
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.genruntimeconfig.cache
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\ref\Mizu.Tests.dll
+C:\Users\mrkma\Desktop\git\Mizu-License-Manager\tests\obj\Release\net8.0-windows\Mizu.Tests.sourcelink.json

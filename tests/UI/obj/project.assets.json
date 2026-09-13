@@ -1,0 +1,101 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "Mizu-License-Manager/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Mizu-License-Manager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mizu-License-Manager.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Mizu-License-Manager/1.0.0": {
+      "type": "project",
+      "path": "../../MizuLicenseManager.csproj",
+      "msbuildProject": "../../MizuLicenseManager.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "Mizu-License-Manager >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\mrkma\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\tests\\UI\\Mizu.UiTests.csproj",
+      "projectName": "Mizu.UiTests",
+      "projectPath": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\tests\\UI\\Mizu.UiTests.csproj",
+      "packagesPath": "C:\\Users\\mrkma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\tests\\UI\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\mrkma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\MizuLicenseManager.csproj": {
+              "projectPath": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\MizuLicenseManager.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
