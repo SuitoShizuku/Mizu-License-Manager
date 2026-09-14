@@ -50,7 +50,7 @@ public sealed class SettingsWindow : Window
             secrets.Visibility = enabled ? Visibility.Visible : Visibility.Collapsed;
             explanation.Text = enabled
                 ? "全件バックアップをパスフレーズで暗号化し、.mlicenseとして送信します。読み込みにも暗号化時のパスフレーズが必要です。パスフレーズはPC内で暗号化保存され、送信されません。変更前のファイルには以前のパスフレーズが必要です。"
-                : "保存・削除・復元のたびに全件を平文の.jsonで送信します。ライセンスキー・メール・メモを送信先の閲覧者が読めます。Webhook URLとパスフレーズはバックアップに含みません。";
+                : "保存・削除・復元のたびに全件を平文の.jsonで送信します。ライセンスキー・メール・メモ・Webhook URLを含みます。パスフレーズ自体はバックアップに含みません。";
         }
         encryption.Checked += (_, _) => UpdateEncryption(); encryption.Unchecked += (_, _) => UpdateEncryption(); UpdateEncryption();
         var save = new Button { Content = "設定を保存", HorizontalAlignment = HorizontalAlignment.Right }; panel.Children.Add(save);

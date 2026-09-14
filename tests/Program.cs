@@ -19,7 +19,7 @@ try
     db.Licenses.Add(new License { Name = "Second", Active = false }); store.Save(db);
     Assert(File.Exists(Path.Combine(directory, "vault.dat.bak")) && store.Load().Licenses.Count == 2, "atomic replacement and previous backup");
     var backup = DataJson.Backup(db);
-    Assert(!Encoding.UTF8.GetString(backup).Contains("test-token"), "webhook secret excluded");
+    Assert(DataJson.Parse(backup).Webhook == db.Webhook, "webhook URL included and restored");
     Assert(DataJson.Parse(backup).Licenses.Count == 2 && DataJson.Parse(backup).Licenses[0].Key == "SECRET-TEST-LICENSE", "all records exported and restorable");
     bool rejected = false; try { DataJson.Parse(Encoding.UTF8.GetBytes("{}")); } catch { rejected = true; }
     Assert(rejected, "unrelated JSON rejected");

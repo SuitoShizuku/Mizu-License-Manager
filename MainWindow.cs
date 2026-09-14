@@ -233,10 +233,11 @@ public sealed class MainWindow : Window
         if (db.TagColors.TryGetValue(tag, out var color) && System.Text.RegularExpressions.Regex.IsMatch(color, "^#[0-9A-Fa-f]{6}$"))
         { element.SetValue(background, new SolidColorBrush((Color)ColorConverter.ConvertFromString(color))); element.SetValue(foreground, Brushes.White); }
         else { element.SetResourceReference(background, "ChipBrush"); element.SetResourceReference(foreground, "TextBrush"); }
-        var menu = new ContextMenu();
+        var menu = new ContextMenu(); menu.SetResourceReference(StyleProperty, "TagMenuStyle");
         foreach (var (label, value) in new[] { ("標準に戻す", ""), ("ブルー", "#285DA8"), ("グリーン", "#226A50"), ("パープル", "#7544A2"), ("ピンク", "#A33570"), ("オレンジ", "#975018"), ("レッド", "#A8323A"), ("グレー", "#535D70") })
         {
-            var choice = new MenuItem { Header = label }; if (value.Length > 0) choice.Icon = new Border { Width = 14, Height = 14, Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(value)), CornerRadius = new CornerRadius(3) };
+            var choice = new MenuItem { Header = label, IsChecked = db.TagColors.TryGetValue(tag, out var currentColor) ? currentColor == value : value.Length == 0 }; choice.SetResourceReference(StyleProperty, "TagMenuItemStyle");
+            choice.Icon = new Border { Width = 14, Height = 14, Background = value.Length > 0 ? new SolidColorBrush((Color)ColorConverter.ConvertFromString(value)) : (Brush)FindResource("ChipBrush"), CornerRadius = new CornerRadius(7), BorderThickness = new Thickness(1), BorderBrush = (Brush)FindResource("BorderBrush") };
             choice.Click += async (_, _) => { if (busy) return; var next = DataJson.Clone(db); if (value.Length == 0) next.TagColors.Remove(tag); else next.TagColors[tag] = value; if (Persist(next)) { RenderApps(); RefreshList(); await Backup(); } }; menu.Items.Add(choice);
         }
         element.ContextMenu = menu;
@@ -321,7 +322,8 @@ public sealed class MainWindow : Window
         catch (System.Security.Cryptography.CryptographicException) { MessageBox.Show(this, "パスフレーズが違うか、ファイルが破損・変更されています。保存データは変更していません。"); return; }
         catch { MessageBox.Show(this, "対応するバックアップを読み込めませんでした。保存データは変更していません。"); return; }
         if (MessageBox.Show(this, $"現在の全ライセンス・メール・デバイス候補を、バックアップ内の{next.Licenses.Count}件に置き換えますか？", "バックアップ復元", MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes) return;
-        next.Webhook = db.Webhook; next.EncryptBackup = db.EncryptBackup; next.BackupPassphrase = db.BackupPassphrase;
+        if (string.IsNullOrWhiteSpace(next.Webhook)) next.Webhook = db.Webhook;
+        next.EncryptBackup = db.EncryptBackup; next.BackupPassphrase = db.BackupPassphrase;
         next.Theme = db.Theme;
         if (!Persist(next)) return; LoadEditor(null); RefreshList(); await Backup();
     }

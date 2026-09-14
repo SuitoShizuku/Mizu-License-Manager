@@ -58,7 +58,7 @@ public static class DataJson
     public static readonly JsonSerializerOptions Options = new() { WriteIndented = true };
     public static T Clone<T>(T value) => JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(value, Options), Options)!;
     public static byte[] Backup(Database db) => JsonSerializer.SerializeToUtf8Bytes(new Database
-    { Licenses = db.Licenses, Emails = db.Emails, Devices = db.Devices, EmailEntries = db.EmailEntries, DeviceEntries = db.DeviceEntries, TagColors = db.TagColors }, Options);
+    { Licenses = db.Licenses, Emails = db.Emails, Devices = db.Devices, EmailEntries = db.EmailEntries, DeviceEntries = db.DeviceEntries, TagColors = db.TagColors, Webhook = db.Webhook }, Options);
     public static void Normalize(Database db)
     {
         NamedEntry Ensure(List<NamedEntry> entries, string name)

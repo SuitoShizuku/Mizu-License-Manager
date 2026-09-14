@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mizu.UiTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89a260663639194c6fc63e2962c29024941899da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72d7ff15ccdd38f33e833b50eac99e8a57138a4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mizu.UiTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mizu.UiTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
