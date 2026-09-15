@@ -64,7 +64,26 @@ public sealed class MainWindow : Window
         DockPanel.SetDock(actions, Dock.Right); header.Children.Add(actions);
         header.Children.Add(new TextBlock { Text = "MIZU  /  License Manager", FontSize = 23, FontWeight = FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center });
         DockPanel.SetDock(header, Dock.Top); root.Children.Add(header);
-        DockPanel.SetDock(status, Dock.Bottom); root.Children.Add(status);
+        var statusFooter = new Grid { Margin = new Thickness(20, 10, 20, 14) };
+        statusFooter.ColumnDefinitions.Add(new ColumnDefinition());
+        statusFooter.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        status.Margin = new Thickness(0, 0, 20, 0);
+        status.VerticalAlignment = VerticalAlignment.Center;
+        statusFooter.Children.Add(status);
+        var credits = new TextBlock { FontSize = 12, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right };
+        credits.SetResourceReference(TextBlock.ForegroundProperty, "MutedBrush");
+        var version = typeof(MainWindow).Assembly.GetName().Version;
+        credits.Inlines.Add($"v{version?.ToString(3) ?? "1.0.5"}  ");
+        var copyright = new System.Windows.Documents.Hyperlink(new System.Windows.Documents.Run("© 2026 SuitoShizuku"))
+        {
+            NavigateUri = new Uri("https://suitomizu.com"),
+            ToolTip = "https://suitomizu.com"
+        };
+        copyright.SetResourceReference(System.Windows.Documents.TextElement.ForegroundProperty, "MutedBrush");
+        copyright.RequestNavigate += (_, e) => { Open(() => OpenTarget.Website(e.Uri.AbsoluteUri)); e.Handled = true; };
+        credits.Inlines.Add(copyright);
+        Grid.SetColumn(credits, 1); statusFooter.Children.Add(credits);
+        DockPanel.SetDock(statusFooter, Dock.Bottom); root.Children.Add(statusFooter);
         var grid = new Grid { Margin = new Thickness(20, 0, 20, 0) }; grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(36, GridUnitType.Star) }); grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(64, GridUnitType.Star) }); root.Children.Add(grid);
         var sidebar = new DockPanel { Margin = new Thickness(0, 0, 20, 0) }; grid.Children.Add(sidebar);
         var controls = new StackPanel(); controls.Children.Add(new TextBlock { Text = "ライセンス一覧", FontSize = 18, Margin = new Thickness(0, 0, 0, 12) });

@@ -11,5 +11,6 @@ if (!$RebuildCurrent -and ((Test-Path -LiteralPath $releaseFolder) -or (Test-Pat
 if ($LASTEXITCODE -ne 0) { throw 'Publish failed. Version was not advanced.' }
 Copy-Item -LiteralPath (Join-Path $projectRoot 'README.md') -Destination (Join-Path $releaseFolder 'README.md')
 Compress-Archive -Path (Join-Path $releaseFolder '*') -DestinationPath $archive -Force:$RebuildCurrent
+& (Join-Path $projectRoot 'Build-Installer.ps1') -Version $version -PayloadDirectory $releaseFolder
 @{ lastReleased = $version } | ConvertTo-Json | Set-Content -LiteralPath $versionFile -Encoding UTF8
 Write-Output "Released v$version : $archive"

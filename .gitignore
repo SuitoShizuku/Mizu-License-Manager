@@ -3,3 +3,4 @@ dist/
 obj/
 tests/
 *.log
+.tools/

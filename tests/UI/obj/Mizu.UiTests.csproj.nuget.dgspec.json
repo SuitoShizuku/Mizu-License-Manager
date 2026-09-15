@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\MizuLicenseManager.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.5",
       "restore": {
         "projectUniqueName": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\MizuLicenseManager.csproj",
         "projectName": "Mizu-License-Manager",
@@ -67,7 +67,7 @@
       }
     },
     "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\tests\\UI\\Mizu.UiTests.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.5",
       "restore": {
         "projectUniqueName": "C:\\Users\\mrkma\\Desktop\\git\\Mizu-License-Manager\\tests\\UI\\Mizu.UiTests.csproj",
         "projectName": "Mizu.UiTests",

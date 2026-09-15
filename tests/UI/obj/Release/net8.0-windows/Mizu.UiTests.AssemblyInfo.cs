@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mizu.UiTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72d7ff15ccdd38f33e833b50eac99e8a57138a4f")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.5.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.5+1697703abb467fdeb3bf46483dd26a37d9fd48c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mizu.UiTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mizu.UiTests")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.5.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
